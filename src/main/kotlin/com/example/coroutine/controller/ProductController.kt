@@ -18,7 +18,6 @@ class ProductController(private val productService: ProductService) {
             ResponseEntity.ok(product)  // Return the product details with a 200 OK
         } catch (e: Exception) {
             // Handle the case where the product wasn't found
-            ResponseEntity.status(HttpStatus.NOT_FOUND).body("Oops! ${e.message}")
-        }
+            ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found")        }
     }
 }
